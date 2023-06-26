@@ -14,13 +14,14 @@
 <body>
     <!-- در بخش بادی تمام محتویات را مینویسیم -->
     <div class="container">
-         <div class="form">
+         <form class="form">
             <div class="userName">
                 <!--  چون این برچسب و فیلد بهم مرتبط هستن ان ها را در یک تگ دیو میگذاریم چون برای استایل دهی به این دیو احتیاج داریم -->
                 <label for="phone"> موبایل:</label>
                 <!-- برای ایجاد یک برچسب از تگ لیبل ستفاده میکنیم -->
                 <!-- برای لینک کردن لیبل و اینپوت از خصیصه های فور و ایدی با اسم های مشترک استفاده میکنیم -->
-                <input type="tel" name="phone" id="phone" maxlength="11" required>
+                <input type="tel" name="phone" id="phone" onchange="validation(event)" >
+                <span id="usererror"></span></span>
                 <!-- برای ایجاد یک فیلد که کاربر شماره تلفن را وارد کند از تگ اینپوت با تایپ تل ستفاده میکنیم -->
             </div>
 
@@ -29,7 +30,8 @@
                 <label for="pass">رمز عبور:</label>
                 <!--  برای ایجاد یک برچسب از تگ لیبل ستفاده میکنیم -->
                 <!-- برای لینک کردن لیبل و اینپوت از خصیصه های فور و ایدی با اسم های مشترک استفاده میکنیم -->
-                <input type="password" name="pass" id="pass" maxlength="6" required>
+                <input type="password" name="pass" id="pass" onchange="validation(event)" >
+                <span id="passerror"> </span>
                 <!--  برای ایجاد یک فیلد که کاربر رمز عبور خود را وارد کند از تگ اینپوت با تایپ پس ستفاده میکنیم که این تایپ باعث میشود پسوورد قابل مشاهده نباشد-->
             </div>
                 
@@ -38,8 +40,8 @@
         
                 <a href="../felex-signUp/singUp.html">ثبت نام</a>
                             <!-- برای لینک کردن صفحه لاگین از این تگ استفاده کردیم و ادرس صفحه ساین اپ را به ان میدهیم که اگر کاربر عضویت نداشت ثبت نام کند -->
-         </div>
-</div>
-
+         </form>
+     </div>
+     <script src="login.js"></script>
 </body>
 </html>
