@@ -86,3 +86,10 @@ a{
     text-decoration: none;
     /* ازبین بردن خط زیر متن لینک */
 }
+
+#usererror{
+    color: red;
+}
+#passerror{
+    color: red;
+}
