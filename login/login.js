@@ -1,8 +1,6 @@
-function validation() {
+function validationUser() {
     let uservalue = document.getElementById('phone').value;
     // مقدار ورودی تگ اینپوت شماره موبایل را در یک متغیر ریختیم
-    let passvalue = document.getElementById('pass').value;
-    // مقدار ورودی تگ اینپوت رمز عبور را در یک متغیر ریختیم
     let isUserValid = uservalue.length == 11;
     // تعیین طول رشته ی فیلد موبایل
     let numValid = false;
@@ -21,3 +19,15 @@ function validation() {
           document.getElementById('usererror').innerHTML = "شماره خود را ویرایش و درست وارد کنید ";
       };
   };
+
+function validationPass() {
+  let passvalue = document.getElementById('pass').value;
+  let isPassValid = passvalue.length >= 8;
+
+  if (!isPassValid) {
+    document.getElementById('passerror').innerHTML = "رمز عبور نباید کمتر از 8 رقم باشد";
+    return false;
+  }else{
+    document.getElementById('passerror').innerHTML = "اطلاعات با موفقیت ثبت شد "
+  };
+}
