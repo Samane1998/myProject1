@@ -27,7 +27,5 @@ function validationPass() {
   if (!isPassValid) {
     document.getElementById('passerror').innerHTML = "رمز عبور نباید کمتر از 8 رقم باشد";
     return false;
-  }else{
-    document.getElementById('passerror').innerHTML = "اطلاعات با موفقیت ثبت شد "
   };
-}
+};
