@@ -32,18 +32,33 @@ async function fetchFromApi(methodType, address, sendData, token) {
     throw `this endpoint need token to work!`;
 
   let result = null;
+  let body = null;
+
+  try {
+    body = JSON.stringify(sendData);
+    if(Object.values(sendData).find((v) => typeof v === "object"))
+    throw 'ورودی غیر مجاز است!'
+  } catch {
+    result = {
+      code: -3,
+      message: "پارامتر های ورودی به تابعتون درست نیست!",
+    };
+    return result;
+  }
+
   try {
     result = await fetch("https://farawin.iran.liara.run/api/" + address, {
       headers: token && {
         Authorization: "bearer " + token,
       },
-      body: JSON.stringify(sendData),
+      body: body,
       method: methodType,
     }).then((res) => res.json());
-  } catch {
+  } catch (e) {
     result = {
       code: -1,
       message: "خطایی از سمت سرور برخورده است!",
+      exception: e,
     };
 
     if (!window.navigator.onLine) {
@@ -169,7 +184,7 @@ const farawin = {
    *
    */
   testRegister: async (username, password, name, responseHandlerCallback) => {
-    const result = await fetchFromApi("POST", "user/register", {
+    const result = await fetchFromApi("POST", "user", {
       username,
       password,
       name,
@@ -208,7 +223,7 @@ const farawin = {
       }
     );
 
-     //if your button is stop form default submit form
+    //if your button is stop form default submit form
     //event.preventDefault();
     farawin.testLogin(
       "موبایل گرفته شده از کاربر",
