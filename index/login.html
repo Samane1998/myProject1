@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login form</title>
     <!-- در این بخش نام عنوان صفحه را مینویسیم -->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../style/form.css">
     <!--  با استفاده از تگ لینک فرمت صفحه را مشخص میکنیم و فایل سی اس اس و اچ تی ام ال را بهم لینک میکنیم -->
     <script src="login.js"></script>
 </head>
@@ -20,7 +20,7 @@
                 <label for="phone"> موبایل:</label>
                 <!-- برای ایجاد یک برچسب از تگ لیبل ستفاده میکنیم -->
                 <!-- برای لینک کردن لیبل و اینپوت از خصیصه های فور و ایدی با اسم های مشترک استفاده میکنیم -->
-                <input type="tel" name="phone" id="phone" onchange="validationUser()" >
+                <input type="tel" name="phone" id="phone" onkeyup="validationUser()" autofocus>
                 <span id="usererror"></span></span>
                 <!-- برای ایجاد یک فیلد که کاربر شماره تلفن را وارد کند از تگ اینپوت با تایپ تل ستفاده میکنیم -->
             </div>
@@ -30,7 +30,7 @@
                 <label for="pass">رمز عبور:</label>
                 <!--  برای ایجاد یک برچسب از تگ لیبل ستفاده میکنیم -->
                 <!-- برای لینک کردن لیبل و اینپوت از خصیصه های فور و ایدی با اسم های مشترک استفاده میکنیم -->
-                <input type="password" name="pass" id="pass" onchange="validationPass()" >
+                <input type="password" name="pass" id="pass" onkeyup="validationPass()" >
                 <span id="passerror"> </span>
                 <!--  برای ایجاد یک فیلد که کاربر رمز عبور خود را وارد کند از تگ اینپوت با تایپ پس ستفاده میکنیم که این تایپ باعث میشود پسوورد قابل مشاهده نباشد-->
             </div>
@@ -38,10 +38,12 @@
                 <button type="submit" formaction="https://web.gap.im/" ">ورود</button>
                 <!-- برای ثبت اطلاعات از تگ باتن استفاده میکنیم با تایپ سابمیت که اطلاعات را رفرش و سیو کند  -->
         
-                <a href="../signUp/singUp.html">ثبت نام</a>
+                <a href="singUp.html">ثبت نام</a>
                             <!-- برای لینک کردن صفحه لاگین از این تگ استفاده کردیم و ادرس صفحه ساین اپ را به ان میدهیم که اگر کاربر عضویت نداشت ثبت نام کند -->
          </form>
      </div>
-     <script src="login.js"></script>
+     <script src="../Script/form.js"></script>
+     <script src="../Script/farawin.js"></script>
+
 </body>
 </html>

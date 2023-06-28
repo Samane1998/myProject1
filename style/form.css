@@ -1,5 +1,5 @@
 body{
-    background: url(stripes-light.webp);
+    background: url(../image/stripes-light.webp);
     box-sizing: border-box;
     /* انداره فقط شامل محتوا است که تغییری در سایز اصلی اعمال نشود و به تمام تگ ها اعمال میشود */
 }
@@ -25,8 +25,8 @@ body{
 .form{
     width: 350px;
     /*  تنظیم پهنا */
-    height: 370px;
-    /*تنظیم ارتفاع */
+   height: 450px;
+    /*تنظیم ارتفاع */;
     border: 1.5px solid black;
     /* اعمال کادر بوردر و تنظیم رنگ و سایز ان */
     background-color:rgb(220, 235, 216) ;
@@ -92,4 +92,8 @@ a{
 }
 #passerror{
     color: red;
+}
+#rePasserror{
+    color: red;
+    width: 200px;
 }

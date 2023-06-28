@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="singUp.css">
+    <link rel="stylesheet" href="../style/form.css">
         <!--  با استفاده از تگ لینک فرمت صفحه را مشخص میکنیم و فایل سی اس اس و اچ تی ام ال را بهم لینک میکنیم -->
     <title>singUp</title>
      <!-- در این بخش نام عنوان صفحه را مینویسیم -->
@@ -19,8 +19,10 @@
             <label for="phone">موبایل:</label>
                             <!-- برای ایجاد یک برچسب از تگ لیبل ستفاده میکنیم -->
                 <!-- برای لینک کردن لیبل و اینپوت از خصیصه های فور و ایدی با اسم های مشترک استفاده میکنیم -->
-            <input type="tel" class="phone" maxlength="11" pattern="[0-9]" required>
+            <input type="tel" class="phone" id="phone" onkeyup="validationUser()" autofocus>
             <!-- برای ایجاد یک فیلد که کاربر شماره تلفن را وارد کند از تگ اینپوت با تایپ تل ستفاده میکنیم -->
+            <span id="usererror"></span>
+            <!-- نمایش پیام اخطار -->
         </div>
 
         <div>
@@ -28,26 +30,32 @@
             <label for="pass">رمز عبور:</label>
               <!--  برای ایجاد یک برچسب از تگ لیبل ستفاده میکنیم -->
                 <!-- برای لینک کردن لیبل و اینپوت از خصیصه های فور و ایدی با اسم های مشترک استفاده میکنیم -->
-            <input type="password" class="pass" minlength="8" maxlength="12" required>
-            <!--  برای ایجاد یک فیلد که کاربر رمز عبور خود را وارد کند از تگ اینپوت با تایپ پس ستفاده میکنیم که این تایپ باعث میشود پسوورد قابل مشاهده نباشد-->
+            <input type="password" class="pass" id="pass"  onkeyup="validationPass()">
+             <!--  برای ایجاد یک فیلد که کاربر رمز عبور خود را وارد کند از تگ اینپوت با تایپ پس ستفاده میکنیم که این تایپ باعث میشود پسوورد قابل مشاهده نباشد-->
+            <span id="passerror"> </span>
+            <!-- نمایش پیام اخطار -->
         </div>
 
         <div>
             <label for="re-pass">تکرار رمز عبور:</label>
                           <!--  برای ایجاد یک برچسب از تگ لیبل ستفاده میکنیم -->
                 <!-- برای لینک کردن لیبل و اینپوت از خصیصه های فور و ایدی با اسم های مشترک استفاده میکنیم -->
-            <input type="password" class="re-pass" minlength="8" maxlength="12" required>
+            <input type="password" class="RePass" id="RePass" onkeyup="validationRePass()">
                         <!--  برای ایجاد یک فیلد که کاربر رمز عبور خود را وارد کند از تگ اینپوت با تایپ پس ستفاده میکنیم که این تایپ باعث میشود پسوورد قابل مشاهده نباشد-->
+            <span id="rePasserror"> </span>
+             <!-- نمایش پیام اخطار -->
         </div>
 
             <button type="submit" formaction="https://web.gap.im/">ثبت نام</button>
             <!-- برای ثبت اطلاعات از تگ باتن استفاده میکنیم با تایپ سابمیت که اطلاعات را رفرش و سیو کند  -->
 
-            <a href="../login/login.html">ورود</a>
+            <a href="login.html">ورود</a>
             <!-- برای لینک کردن صفحه لاگین از این تگ استفاده کردیم و ادرس صفحه لاگین را به ان میدهیم که اگر کاربر عضویت داشت وارد شود -->
 
     </form>
 </div>
+<script src="../Script/form.js"></script>
+<script src="../Script/farawin.js"></script>
     
 </body>
 </html>
